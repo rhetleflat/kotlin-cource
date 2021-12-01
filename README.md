@@ -3,8 +3,16 @@
 https://frost.met.no/api.html#/
 
 Bergen Florida : SN50540
+Bergen Flesland : SN50500
+
 2021-11-01/2021-11-02
+
+Kategorier
 air_temperature
+wind_speed
+accumulated(precipitation_amount)
+
+
 
 https://frost.met.no/api.html#!/observations/observations
 
