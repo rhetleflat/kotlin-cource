@@ -12,6 +12,16 @@
       <option name="url" value="https://kred.maven.distrepos.com/kos-release" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="jitpack.io" />
+      <option name="name" value="jitpack.io" />
+      <option name="url" value="https://jitpack.io" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="oilcomp-oilcomp" />
+      <option name="name" value="oilcomp-oilcomp" />
+      <option name="url" value="https://oilcomp-782436859673.d.codeartifact.eu-north-1.amazonaws.com/maven/oilcomp/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="kds-snapshot" />
       <option name="name" value="Kreditorforeningen Dist" />
       <option name="url" value="https://kred.maven.distrepos.com/kos-snapshot" />
@@ -30,6 +40,11 @@
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven.oracle.com" />
+      <option name="name" value="maven.oracle.com" />
+      <option name="url" value="https://maven.oracle.com" />
     </remote-repository>
   </component>
 </project>
