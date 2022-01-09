@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "537fecf7-f876-4b45-93ff-3f99043cb428",
+		"name": "Frost API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Frost Oauth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "5435ddce-8016-48d0-b50f-a535f70be85d",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "f6ee8cf8-f634-45ae-bcd9-48bdbc482e87",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://frost.met.no/auth/accessToken",
+					"protocol": "https",
+					"host": [
+						"frost",
+						"met",
+						"no"
+					],
+					"path": [
+						"auth",
+						"accessToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Frost Observations",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenfrost}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://frost.met.no/observations/v0.jsonld?sources=SN50540&referencetime=2021-11-01/2021-11-02&elements=air_temperature",
+					"protocol": "https",
+					"host": [
+						"frost",
+						"met",
+						"no"
+					],
+					"path": [
+						"observations",
+						"v0.jsonld"
+					],
+					"query": [
+						{
+							"key": "sources",
+							"value": "SN50540"
+						},
+						{
+							"key": "referencetime",
+							"value": "2021-11-01/2021-11-02"
+						},
+						{
+							"key": "elements",
+							"value": "air_temperature"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Elements",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenfrost}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://frost.met.no/elements/v0.jsonld",
+					"protocol": "https",
+					"host": [
+						"frost",
+						"met",
+						"no"
+					],
+					"path": [
+						"elements",
+						"v0.jsonld"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Locations",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenfrost}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://frost.met.no/locations/v0.jsonld",
+					"protocol": "https",
+					"host": [
+						"frost",
+						"met",
+						"no"
+					],
+					"path": [
+						"locations",
+						"v0.jsonld"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sources",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenfrost}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://frost.met.no/sources/v0.jsonld?municipality=BERGEN",
+					"protocol": "https",
+					"host": [
+						"frost",
+						"met",
+						"no"
+					],
+					"path": [
+						"sources",
+						"v0.jsonld"
+					],
+					"query": [
+						{
+							"key": "municipality",
+							"value": "BERGEN"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
