@@ -1,5 +1,6 @@
-data class Obs (val elementId : String,val value : Double,val unit : String) {
-}
+data class ObservationResponse (val itemsPerPage : Int,
+                                val data : List<Data>)
+
 
 /**
  *

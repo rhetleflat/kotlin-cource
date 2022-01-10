@@ -1,6 +1,7 @@
-data class Observations (val itemsPerPage : Int,
-    val data : List<Data>)
+import java.util.*
 
+data class Observation (val elementId : String, val value : Double, val unit : String, val referenceTime : Date,val timeOffset : String) {
+}
 
 /**
  *
