@@ -1,0 +1,119 @@
+Index: src/main/java/Frost.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import com.google.gson.Gson\nimport okhttp3.*\nimport okhttp3.MediaType.Companion.toMediaTypeOrNull\n\n\nfun getJson() {\n    val client = OkHttpClient().newBuilder()\n        .build()\n    val mediaType: MediaType? = \"application/x-www-form-urlencoded\".toMediaTypeOrNull()\n    val body: RequestBody = RequestBody.create(\n        mediaType,\n        \"client_id=5435ddce-8016-48d0-b50f-a535f70be85d&client_secret=f6ee8cf8-f634-45ae-bcd9-48bdbc482e87&grant_type=client_credentials\"\n    )\n    val request: Request = Request.Builder()\n        .url(\"https://frost.met.no/auth/accessToken\")\n        .method(\"POST\", body)\n        .addHeader(\"Content-Type\", \"application/x-www-form-urlencoded\")\n        .build()\n    val response = client.newCall(request).execute()\n\n    val resp : String? = response.body?.string()\n    var gson : Gson = Gson()\n    val tokenObj: TokenObj = gson.fromJson<TokenObj>(resp,TokenObj::class.java)\n    println(tokenObj.access_token);\n\n    val request2: Request = Request.Builder()\n        .url(\"https://frost.met.no/observations/v0.jsonld?sources=SN50540&referencetime=2021-11-01/2021-11-02&elements=air_temperature\")\n        .method(\"GET\", null)\n        .addHeader(\"Authorization\", \"Bearer \"+tokenObj.access_token)\n        .build()\n    val response2 = client.newCall(request2).execute()\n    println(response2.body?.string())\n}\n\nfun main (args: Array<String>) {\n    var isMeny=true;\n    var kontoListe: ArrayList<Konto> = ArrayList()\n    while (isMeny) {\n        println(\"1. Hent for Florida\")\n        println(\"6. Avslutt\")\n        var input = readLine()?:\"\"\n        when (input) {\n            \"1\" -> getJson()\n            \"6\" -> isMeny=false\n        }\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Frost.kt b/src/main/java/Frost.kt
+--- a/src/main/java/Frost.kt	
++++ b/src/main/java/Frost.kt	
+@@ -11,37 +11,43 @@
+         mediaType,
+         "client_id=5435ddce-8016-48d0-b50f-a535f70be85d&client_secret=f6ee8cf8-f634-45ae-bcd9-48bdbc482e87&grant_type=client_credentials"
+     )
+-    val request: Request = Request.Builder()
+-        .url("https://frost.met.no/auth/accessToken")
+-        .method("POST", body)
+-        .addHeader("Content-Type", "application/x-www-form-urlencoded")
+-        .build()
+-    val response = client.newCall(request).execute()
++    val response = test(body, client)
+ 
+-    val resp : String? = response.body?.string()
+-    var gson : Gson = Gson()
+-    val tokenObj: TokenObj = gson.fromJson<TokenObj>(resp,TokenObj::class.java)
++    val resp: String? = response.body?.string()
++    var gson: Gson = Gson()
++    val tokenObj: TokenObj = gson.fromJson<TokenObj>(resp, TokenObj::class.java)
+     println(tokenObj.access_token);
+ 
+     val request2: Request = Request.Builder()
+         .url("https://frost.met.no/observations/v0.jsonld?sources=SN50540&referencetime=2021-11-01/2021-11-02&elements=air_temperature")
+         .method("GET", null)
+-        .addHeader("Authorization", "Bearer "+tokenObj.access_token)
++        .addHeader("Authorization", "Bearer " + tokenObj.access_token)
+         .build()
+     val response2 = client.newCall(request2).execute()
+     println(response2.body?.string())
+ }
+ 
+-fun main (args: Array<String>) {
+-    var isMeny=true;
++private fun test(body: RequestBody, client: OkHttpClient): Response {
++    val request: Request = Request.Builder()
++        .url("https://frost.met.no/auth/accessToken")
++        .method("POST", body)
++        .addHeader("Content-Type", "application/x-www-form-urlencoded")
++        .build()
++    val response = client.newCall(request).execute()
++    return response
++}
++
++fun main(args: Array<String>) {
++    var isMeny = true;
+     var kontoListe: ArrayList<Konto> = ArrayList()
++    kontoListe.grou
+     while (isMeny) {
+         println("1. Hent for Florida")
+         println("6. Avslutt")
+-        var input = readLine()?:""
++        var input = readLine() ?: ""
+         when (input) {
+             "1" -> getJson()
+-            "6" -> isMeny=false
++            "6" -> isMeny = false
+         }
+     }
+ }
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"41c9d43c-caaa-4fe5-b540-a4ae481780a5\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/runConfigurations.xml\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Kotlin File\" />\n        <option value=\"Kotlin Class\" />\n        <option value=\"Kotlin Data Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitSEFilterConfiguration\">\n    <file-type-list>\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\n      <filtered-out-file-type name=\"TAG\" />\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\n    </file-type-list>\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"21bA3CZSOZxZ0MHdyZasvwaJXpr\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File\" value=\"JAVA\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n    <property name=\"project.structure.last.edited\" value=\"Libraries\" />\n    <property name=\"project.structure.proportion\" value=\"0.15\" />\n    <property name=\"project.structure.side.proportion\" value=\"0.2\" />\n  </component>\n  <component name=\"RunManager\" selected=\"Kotlin.FrostKt\">\n    <configuration name=\"BankKt\" type=\"JetRunConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"BankKt\" />\n      <module name=\"KotlinCourse\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"FrostKt\" type=\"JetRunConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"FrostKt\" />\n      <module name=\"KotlinCourse\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"GjettTalletKt\" type=\"JetRunConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"GjettTalletKt\" />\n      <module name=\"KotlinCourse\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"InputValKt\" type=\"JetRunConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"InputValKt\" />\n      <module name=\"KotlinCourse\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"VariableStringKt\" type=\"JetRunConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"VariableStringKt\" />\n      <module name=\"KotlinCourse\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Kotlin.FrostKt\" />\n        <item itemvalue=\"Kotlin.BankKt\" />\n        <item itemvalue=\"Kotlin.GjettTalletKt\" />\n        <item itemvalue=\"Kotlin.InputValKt\" />\n        <item itemvalue=\"Kotlin.VariableStringKt\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"41c9d43c-caaa-4fe5-b540-a4ae481780a5\" name=\"Changes\" comment=\"\" />\n      <created>1638199218071</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1638199218071</updated>\n    </task>\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,8 +5,16 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="41c9d43c-caaa-4fe5-b540-a4ae481780a5" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/azure/azureSettings.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_2_8_0.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_13_0.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_1_4_10.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_common_1_4_0.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Frost.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frost.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/KotlinCourse.kotlin_module" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -44,11 +52,13 @@
+   <component name="PropertiesComponent">
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="JAVA" />
+     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+     <property name="project.structure.last.edited" value="Libraries" />
+     <property name="project.structure.proportion" value="0.15" />
+     <property name="project.structure.side.proportion" value="0.2" />
++    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+   </component>
+   <component name="RunManager" selected="Kotlin.FrostKt">
+     <configuration name="BankKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+@@ -117,5 +127,6 @@
+         </entry>
+       </map>
+     </option>
++    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+ </project>
+\ No newline at end of file
