@@ -106,7 +106,7 @@ fun getTotalPrecipitationMonth(token:TokenObj,client: OkHttpClient) {
     var gson: Gson = Gson()
     val obs = gson.fromJson<ObservationResponse>(response2.body?.string(),ObservationResponse::class.java)
     var hightemp : Double = 0.0
-    for (obsPerMonth in obs.data.filter { it.sourceId == "SN50500:0" }.groupBy { it.referenceTime.month}) {
+    for (obsPerMonth in obs.data.filter { it.sourceId == "SN50500:0" }.groupBy { it.referenceTime}) {
         print("Måned er ${obsPerMonth.key+1}: ")
         var totalPrecipitation = 0.00
         for (obsSource in obsPerMonth.value){
