@@ -1,0 +1,144 @@
+Index: .idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_1_4_10.xml
+===================================================================
+diff --git a/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_1_4_10.xml b/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_1_4_10.xml
+deleted file mode 100644
+--- a/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_1_4_10.xml	
++++ /dev/null	
+@@ -1,13 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.4.10">
+-    <CLASSES>
+-      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.4.10/kotlin-stdlib-1.4.10.jar!/" />
+-    </CLASSES>
+-    <JAVADOC>
+-      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.4.10/kotlin-stdlib-1.4.10-javadoc.jar!/" />
+-    </JAVADOC>
+-    <SOURCES>
+-      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.4.10/kotlin-stdlib-1.4.10-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_common_1_4_0.xml
+===================================================================
+diff --git a/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_common_1_4_0.xml b/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_common_1_4_0.xml
+deleted file mode 100644
+--- a/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_common_1_4_0.xml	
++++ /dev/null	
+@@ -1,13 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.4.0">
+-    <CLASSES>
+-      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.4.0/kotlin-stdlib-common-1.4.0.jar!/" />
+-    </CLASSES>
+-    <JAVADOC>
+-      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.4.0/kotlin-stdlib-common-1.4.0-javadoc.jar!/" />
+-    </JAVADOC>
+-    <SOURCES>
+-      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.4.0/kotlin-stdlib-common-1.4.0-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__org_jetbrains_annotations_13_0.xml
+===================================================================
+diff --git a/.idea/libraries/Maven__org_jetbrains_annotations_13_0.xml b/.idea/libraries/Maven__org_jetbrains_annotations_13_0.xml
+deleted file mode 100644
+--- a/.idea/libraries/Maven__org_jetbrains_annotations_13_0.xml	
++++ /dev/null	
+@@ -1,13 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Maven: org.jetbrains:annotations:13.0">
+-    <CLASSES>
+-      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/annotations/13.0/annotations-13.0.jar!/" />
+-    </CLASSES>
+-    <JAVADOC>
+-      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/annotations/13.0/annotations-13.0-javadoc.jar!/" />
+-    </JAVADOC>
+-    <SOURCES>
+-      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/annotations/13.0/annotations-13.0-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__com_squareup_okio_okio_2_8_0.xml
+===================================================================
+diff --git a/.idea/libraries/Maven__com_squareup_okio_okio_2_8_0.xml b/.idea/libraries/Maven__com_squareup_okio_okio_2_8_0.xml
+deleted file mode 100644
+--- a/.idea/libraries/Maven__com_squareup_okio_okio_2_8_0.xml	
++++ /dev/null	
+@@ -1,13 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Maven: com.squareup.okio:okio:2.8.0">
+-    <CLASSES>
+-      <root url="jar://$MAVEN_REPOSITORY$/com/squareup/okio/okio/2.8.0/okio-2.8.0.jar!/" />
+-    </CLASSES>
+-    <JAVADOC>
+-      <root url="jar://$MAVEN_REPOSITORY$/com/squareup/okio/okio/2.8.0/okio-2.8.0-javadoc.jar!/" />
+-    </JAVADOC>
+-    <SOURCES>
+-      <root url="jar://$MAVEN_REPOSITORY$/com/squareup/okio/okio/2.8.0/okio-2.8.0-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/azure/azureSettings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/azure/azureSettings.xml b/.idea/azure/azureSettings.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/azure/azureSettings.xml	
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AzureSettings">
++    <option name="appInsights" value="rO0ABXVyAEtbTGNvbS5taWNyb3NvZnQuYXBwbGljYXRpb25pbnNpZ2h0cy5wcmVmZXJlbmNlLkFwcGxpY2F0aW9uSW5zaWdodHNSZXNvdXJjZTvCzxEP0C2HbAIAAHhwAAAAAA==" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/runConfigurations.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/runConfigurations.xml b/.idea/runConfigurations.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/runConfigurations.xml	
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RunConfigurationProducerService">
++    <option name="ignoredProducers">
++      <set>
++        <option value="com.android.tools.idea.compose.preview.runconfiguration.ComposePreviewRunConfigurationProducer" />
++      </set>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"RemoteRepositoriesConfiguration\">\n    <remote-repository>\n      <option name=\"id\" value=\"central\" />\n      <option name=\"name\" value=\"Central Repository\" />\n      <option name=\"url\" value=\"https://repo.maven.apache.org/maven2\" />\n    </remote-repository>\n    <remote-repository>\n      <option name=\"id\" value=\"kds\" />\n      <option name=\"name\" value=\"Kreditorforeningen Dist\" />\n      <option name=\"url\" value=\"https://kred.maven.distrepos.com/kos-release\" />\n    </remote-repository>\n    <remote-repository>\n      <option name=\"id\" value=\"jitpack.io\" />\n      <option name=\"name\" value=\"jitpack.io\" />\n      <option name=\"url\" value=\"https://jitpack.io\" />\n    </remote-repository>\n    <remote-repository>\n      <option name=\"id\" value=\"oilcomp-oilcomp\" />\n      <option name=\"name\" value=\"oilcomp-oilcomp\" />\n      <option name=\"url\" value=\"https://oilcomp-782436859673.d.codeartifact.eu-north-1.amazonaws.com/maven/oilcomp/\" />\n    </remote-repository>\n    <remote-repository>\n      <option name=\"id\" value=\"kds-snapshot\" />\n      <option name=\"name\" value=\"Kreditorforeningen Dist\" />\n      <option name=\"url\" value=\"https://kred.maven.distrepos.com/kos-snapshot\" />\n    </remote-repository>\n    <remote-repository>\n      <option name=\"id\" value=\"repository.jboss.org-public\" />\n      <option name=\"name\" value=\"JBoss.org Maven repository\" />\n      <option name=\"url\" value=\"https://repository.jboss.org/nexus/content/groups/public\" />\n    </remote-repository>\n    <remote-repository>\n      <option name=\"id\" value=\"central\" />\n      <option name=\"name\" value=\"Maven Central repository\" />\n      <option name=\"url\" value=\"https://repo1.maven.org/maven2\" />\n    </remote-repository>\n    <remote-repository>\n      <option name=\"id\" value=\"jboss.community\" />\n      <option name=\"name\" value=\"JBoss Community repository\" />\n      <option name=\"url\" value=\"https://repository.jboss.org/nexus/content/repositories/public/\" />\n    </remote-repository>\n    <remote-repository>\n      <option name=\"id\" value=\"maven.oracle.com\" />\n      <option name=\"name\" value=\"maven.oracle.com\" />\n      <option name=\"url\" value=\"https://maven.oracle.com\" />\n    </remote-repository>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/jarRepositories.xml b/.idea/jarRepositories.xml
+--- a/.idea/jarRepositories.xml	
++++ b/.idea/jarRepositories.xml	
+@@ -37,6 +37,11 @@
+       <option name="url" value="https://repo1.maven.org/maven2" />
+     </remote-repository>
+     <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="central" />
++      <option name="url" value="https://nexus.finods.com/nexus/content/groups/public/" />
++    </remote-repository>
++    <remote-repository>
+       <option name="id" value="jboss.community" />
+       <option name="name" value="JBoss Community repository" />
+       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />

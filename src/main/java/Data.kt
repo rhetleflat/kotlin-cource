@@ -1,6 +1,6 @@
 import java.util.*
 
-class Data (val sourceId : String, val referenceTime : Date,val observations : List<Observation>) {
+class Data (val sourceId : String, val referenceTime : Date, var observations : List<Observation>) {
 }
 
 /**
